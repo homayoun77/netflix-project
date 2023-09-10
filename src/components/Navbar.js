@@ -43,15 +43,22 @@ function Navbar() {
 
       {
         user?.email ?
-          <div className='hidden md:flex'>
-            <Link to={'/account'}>
-              <button className='text-white py-2 px-4 rounded mr-2 bg-slate-300/20'>{user?.displayName}</button>
-            </Link>
+          <>
+            <div className='hidden md:flex'>
+              <Link to={'/account'}>
+                <button className='text-white py-2 px-4 rounded mr-2 bg-slate-300/20'>{user?.displayName}</button>
+              </Link>
 
-            <button onClick={handleLogout} className='bg-red-600 py-2 px-4 rounded text-white'>Logout</button>
+              <button onClick={handleLogout} className='bg-red-600 py-2 px-4 rounded text-white'>Logout</button>
 
-          </div>
+            </div>
 
+            <div className='md:hidden'>
+              <Link to={'/account'}>
+                <button className='text-white text-sm py-1 px-2 rounded mr-2 bg-slate-300/20'>{user?.displayName}</button>
+              </Link>
+            </div>
+          </>
           :
 
           <div className='hidden md:flex'>
@@ -89,7 +96,7 @@ function Navbar() {
 
               :
 
-              <div className=''>
+              <div className='my-4'>
                 <Link to={'/login'}>
                   <button className='text-white py-2 px-4 rounded mr-2 hover:bg-red-600'>Sign In</button>
                 </Link>
