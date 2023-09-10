@@ -29,17 +29,21 @@ function Movies() {
           })
         }
 
-        <ReactPaginate
-          pageCount={500}
-          className=' text-white text-center my-10 flex justify-center items-center max-w-[900px] mx-auto'
-          pageClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
-          previousClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
-          nextClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
-          breakClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
-          activeClassName='bg-red-600'
-          previousLabel='Prev'
-          onPageChange={handelPageChange}
-        />
+        <div className='px-5'>
+          <ReactPaginate
+            pageCount={500}
+            className=' text-white text-center my-10 flex justify-center items-center max-w-[100%]'
+            pageClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
+            previousClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
+            nextClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
+            breakClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
+            activeClassName='bg-red-600'
+            previousLabel='Prev'
+            pageRangeDisplayed={2}
+            marginPagesDisplayed={2}
+            onPageChange={handelPageChange}
+          />
+        </div>
 
       </div>
       <Footer />
