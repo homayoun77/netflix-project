@@ -37,6 +37,8 @@ function TvSeries() {
           breakClassName='md:px-3 px-2 py-1 text-sm md:py-2 border'
           activeClassName='bg-red-600'
           previousLabel='Prev'
+          pageRangeDisplayed={2}
+          marginPagesDisplayed={2}
           onPageChange={handelPageChange}
         />
 
