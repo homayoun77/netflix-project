@@ -48,9 +48,9 @@ function SeriesDetails() {
         <>
             <div className='text-white w-full h-screen'>
                 <div className='w-full h-full'>
-                    <img className=' w-full h-full object-cover opacity-70' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt="" />
+                    <img className=' w-full h-screen object-cover opacity-70' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt="" />
 
-                    <div className=' w-full h-full absolute top-0 left-0 flex justify-center items-center md:px-4'>
+                    <div className=' w-full h-screen absolute top-0 left-0 flex justify-center items-center md:px-4'>
                         <div className=' md:max-w-[1100px] md:h-[550px] w-full h-screen bg-black/80 md:rounded-lg p-4 md:flex'>
                             <div className='flex'>
                                 <div className='w-[40%] pt-20 md:py-0'>

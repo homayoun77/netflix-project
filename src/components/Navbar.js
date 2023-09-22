@@ -77,48 +77,49 @@ function Navbar() {
         }
       </div>
 
-      <div className={nav ? 'fixed left-0 top-0 w-[87%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
+      <div onClick={handleNav} className={nav ? 'fixed right-0 top-0 w-[16%] h-full  ease-in-out duration-500' : 'fixed right-[-100%]'}></div>
+        <div className={nav ? 'fixed left-0 top-0 w-[84%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
 
-        <div className=' p-5 border-b border-b-gray-500'>
-          <Link to={'/'}>
-            <h1 className='text-red-600 text-3xl font-bold cursor-pointer border-b-gray-500'>NETFLIX</h1>
-          </Link>
-          {
-            user?.email ?
-              <div className='my-4 text-sm'>
-                <Link to={'/account'}>
-                  <button className='text-white py-2 px-4 rounded mr-2 bg-slate-300/20'>{user?.displayName}</button>
-                </Link>
+          <div className=' p-5 border-b border-b-gray-500'>
+            <Link to={'/'}>
+              <h1 onClick={handleNav} className='text-red-600 text-3xl font-bold cursor-pointer border-b-gray-500'>NETFLIX</h1>
+            </Link>
+            {
+              user?.email ?
+                <div className='my-4 text-sm'>
+                  <Link to={'/account'}>
+                    <button onClick={handleNav} className='text-white py-2 px-4 rounded mr-2 bg-slate-300/20'>{user?.displayName}</button>
+                  </Link>
 
-                <button onClick={handleLogout} className='bg-red-600 py-2 px-4 rounded text-white'>Logout</button>
+                  <button onClick={() => { handleLogout(); handleNav() }} className='bg-red-600 py-2 px-4 rounded text-white'>Logout</button>
 
-              </div>
+                </div>
 
-              :
+                :
 
-              <div className='my-4'>
-                <Link to={'/login'}>
-                  <button className='text-white py-2 px-4 rounded mr-2 hover:bg-red-600'>Sign In</button>
-                </Link>
-                <Link to={'/signup'}>
-                  <button className='bg-red-600 py-2 px-4 rounded text-white'>Sign Up</button>
-                </Link>
-              </div>
-          }
+                <div className='my-4'>
+                  <Link to={'/login'}>
+                    <button onClick={handleNav} className='text-white py-2 px-4 rounded mr-2 hover:bg-red-600'>Sign In</button>
+                  </Link>
+                  <Link to={'/signup'}>
+                    <button onClick={handleNav} className='bg-red-600 py-2 px-4 rounded text-white'>Sign Up</button>
+                  </Link>
+                </div>
+            }
+          </div>
+
+          <div className='p-5'>
+            <Link to={'/movies'}>
+              <p onClick={handleNav} className=' text-lg text-gray-200 hover:border-b-2 font-bold'>Movies</p>
+            </Link>
+            <Link to={'/tvSeries'}>
+              <p onClick={handleNav} className=' text-lg text-gray-200 hover:border-b-2 font-bold mt-4'>TV Series</p>
+            </Link>
+          </div>
+
+
+
         </div>
-
-        <div className='p-5'>
-          <Link to={'/movies'}>
-            <p className=' text-lg text-gray-200 hover:border-b-2 font-bold'>Movies</p>
-          </Link>
-          <Link to={'/tvSeries'}>
-            <p className=' text-lg text-gray-200 hover:border-b-2 font-bold mt-4'>TV Series</p>
-          </Link>
-        </div>
-
-
-
-      </div>
 
     </div>
   )
