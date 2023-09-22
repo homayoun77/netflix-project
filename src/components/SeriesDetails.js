@@ -19,7 +19,7 @@ function SeriesDetails() {
             await setDoc(movieId, {
 
                 id: movie.id,
-                title: movie.title,
+                title: movie.name,
                 img: movie.backdrop_path
 
             })
@@ -65,13 +65,13 @@ function SeriesDetails() {
                                     <p className='my-2 md:my-4 text-sm md:text-base'><span className='text-yellow-500 font-bold'>Number of Episodes : </span>{movie.number_of_episodes}</p>
                                     <p className='my-2 md:my-4 text-sm md:text-base'><span className='text-yellow-500 font-bold'>Rating : </span>{movie.vote_average}</p>
 
-                                    <button className='hidden md:block border-2 border-white text-white hover:bg-slate-100 px-8 py-2 my-8 font-bold transition-all' onClick={saveShow}>Add to Favorite</button>
+                                    <button className='hidden md:block border-2 border-white text-white hover:bg-slate-100 hover:text-black px-8 py-2 my-8 font-bold transition-all' onClick={saveShow}>Add to Favorite</button>
                                 </div>
                             </div>
                             <div>
                                 <p className='md:hidden my-2'><span className='text-yellow-500 font-bold'>Overview : </span>{truncateString(movie.overview, 300)}</p>
                             </div>
-                            <button className='md:hidden w-full border-2 border-white text-white hover:bg-slate-100 px-8 py-2 my-4 font-bold transition-all' onClick={saveShow}>Add to Favorite</button>
+                            <button className='md:hidden w-full border-2 border-white text-white active:bg-slate-100 active:text-black px-8 py-2 my-4 font-bold transition-all' onClick={saveShow}>Add to Favorite</button>
                         </div>
                     </div>
                 </div>
